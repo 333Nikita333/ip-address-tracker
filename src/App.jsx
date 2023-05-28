@@ -7,6 +7,7 @@ const AboutPage = lazy(() => import('./pages/About'));
 const SearchPage = lazy(() => import('./pages/Search'));
 
 const App = () => {
+  
   return (
       <Routes>
         <Route path="/" element={<Layout />}>

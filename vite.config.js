@@ -1,15 +1,22 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import dotenv from 'dotenv';
 
-export default defineConfig({
-  plugins: [react()],
-  // base: "/ip-address-tracker/",
-  server: {
-    open: './',
-    port: 4000,
-  },
-  preview: {
-    open: './',
-    port: 4000,
-  },
-})
+export default defineConfig(({ mode }) => {
+  dotenv.config();
+
+  return {
+    plugins: [react()],
+    server: {
+      open: true,
+      port: 4000,
+    },
+    preview: {
+      open: true,
+      port: 4000,
+    },
+    define: {
+      'process.env': process.env,
+    },
+  };
+});
