@@ -5,7 +5,6 @@
   "homepage": "https://333nikita333.github.io/ip-address-tracker/",
   "type": "module",
   "scripts": {
-    "start": "npm run dev",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
@@ -14,7 +13,9 @@
   "dependencies": {
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.44.1",
+    "react-router-dom": "^6.11.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
