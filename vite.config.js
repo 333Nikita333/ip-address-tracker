@@ -1,10 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import dotenv from 'dotenv';
 
 export default defineConfig(({ mode }) => {
-  dotenv.config();
-
   return {
     plugins: [react()],
     server: {
@@ -14,9 +11,6 @@ export default defineConfig(({ mode }) => {
     preview: {
       open: true,
       port: 4000,
-    },
-    define: {
-      'process.env': process.env,
     },
   };
 });

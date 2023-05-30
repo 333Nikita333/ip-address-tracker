@@ -1,19 +1,16 @@
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-// const myIp = "176.38.11.175"
-const SearchForm = () => {
-  const [inputValue, setInputValue] = useState(null);
+const SearchForm = ({ onSearch }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = data => {
-    console.log(data.ip);
-    setInputValue(data.ip);
-    console.log(inputValue);
+    onSearch(data.ip);
+    reset()
   };
 
   return (
