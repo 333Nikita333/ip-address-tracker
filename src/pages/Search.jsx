@@ -1,8 +1,46 @@
 import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { getCurrentUserIP, getDataByIP } from '../services/GeolocationAPI';
 import SearchForm from '../components/SearchForm';
 import DataDisplay from '../components/DataDisplay';
 import MapBox from '../components/MapBox';
+
+const Background = styled.div`
+  padding: 20px;
+  height: 400px;
+
+  text-align: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(62, 82, 163, 0.4),
+      rgba(62, 82, 163, 0.4)
+    ),
+    url('/src/assets/pattern-bg-mobile-375x300.png');
+
+  @media screen and (min-width: 401px) {
+    height: 200px;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(62, 82, 163, 0.4),
+        rgba(62, 82, 163, 0.4)
+      ),
+      url('/src/assets/pattern-bg-desktop-1440x280.png');
+  }
+`;
+
+const Title = styled.h1`
+  margin-bottom: 30px;
+
+  font-size: 23px;
+  font-weight: 500;
+
+  color: #ffffff;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+`;
 
 const Search = () => {
   const [ipData, setIpData] = useState(null);
@@ -45,15 +83,18 @@ const Search = () => {
 
   return (
     <section>
-      <SearchForm onSearch={handleSearch} />
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        ipData && <DataDisplay ipData={ipData} />
-      )}
+      <Background>
+        <Title>IP Adress Tracker</Title>
+        <SearchForm onSearch={handleSearch} />
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          ipData && <DataDisplay ipData={ipData} />
+        )}
+      </Background>
       {mapLocation && !isLoading && <MapBox location={mapLocation} />}
     </section>
   );
 };
- 
+
 export default Search;

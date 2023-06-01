@@ -1,4 +1,6 @@
 import { useForm } from 'react-hook-form';
+import { FaChevronRight } from 'react-icons/fa';
+import { Button, Form, Input } from './SearchForm.styled';
 
 const SearchForm = ({ onSearch }) => {
   const {
@@ -10,12 +12,12 @@ const SearchForm = ({ onSearch }) => {
 
   const onSubmit = data => {
     onSearch(data.ip);
-    reset()
+    reset();
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <Input
         {...register('ip', {
           required: 'IP address is required',
           pattern: {
@@ -26,8 +28,10 @@ const SearchForm = ({ onSearch }) => {
         placeholder="Enter IP address"
       />
       {errors.ip && <span>{errors.ip.message}</span>}
-      <button type="submit">Search</button>
-    </form>
+      <Button type="submit">
+        <FaChevronRight color="#fff" size={15} />
+      </Button>
+    </Form>
   );
 };
 

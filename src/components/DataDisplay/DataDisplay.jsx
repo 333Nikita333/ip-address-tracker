@@ -1,3 +1,5 @@
+import { DataInfo, InfoItem, InfoList } from './DataDisplay.styled';
+
 const DataDisplay = ({ ipData }) => {
   const {
     ip,
@@ -6,14 +8,27 @@ const DataDisplay = ({ ipData }) => {
   } = ipData || {};
 
   return (
-    <div>
-      <p>IP Address: {ip}</p>
-      <p>
-        Location: {country}, {region}
-      </p>
-      <p>Timezone: {timezone}</p>
-      <p>ISP: {isp}</p>
-    </div>
+    <DataInfo>
+      <InfoList>
+        <InfoItem>
+          <p>IP Address</p> <span>{ip}</span>
+        </InfoItem>
+        <InfoItem>
+          <p>Location</p>
+          <span>
+            {country}, {region}
+          </span>
+        </InfoItem>
+        <InfoItem>
+          <p>Timezone</p>
+          <span>UTC {timezone}</span>
+        </InfoItem>
+        <InfoItem>
+          <p>ISP</p>
+          <span>{isp}</span>
+        </InfoItem>
+      </InfoList>
+    </DataInfo>
   );
 };
 

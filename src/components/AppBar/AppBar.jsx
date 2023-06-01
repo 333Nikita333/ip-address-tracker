@@ -1,10 +1,11 @@
 import Navigation from '../Navigation';
+import { Header } from './AppBar.styled';
 
 const AppBar = () => {
   return (
-    <header>
+    <Header>
       <Navigation />
-    </header>
+    </Header>
   );
 };
 
