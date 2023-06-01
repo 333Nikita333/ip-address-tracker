@@ -4,6 +4,8 @@ import { getCurrentUserIP, getDataByIP } from '../services/GeolocationAPI';
 import SearchForm from '../components/SearchForm';
 import DataDisplay from '../components/DataDisplay';
 import MapBox from '../components/MapBox';
+import a from '../../ip.json';
+import b from '../../ip2.json';
 
 const Background = styled.div`
   padding: 20px;
@@ -50,11 +52,11 @@ const Search = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const currentIP = await getCurrentUserIP();
-        const data = await getDataByIP(currentIP);
-        const { location } = data;
+        // const currentIP = await getCurrentUserIP();
+        // const data = await getDataByIP(currentIP);
+        const { location } = a;
 
-        setIpData(data);
+        setIpData(a);
         setMapLocation(location);
       } catch (error) {
         console.log('Error fetching data:', error.message);
@@ -69,10 +71,10 @@ const Search = () => {
   const handleSearch = async ip => {
     try {
       setIsLoading(true);
-      const newData = await getDataByIP(ip);
-      const { location: newLocation } = newData;
+      // const newData = await getDataByIP(ip);
+      const { location: newLocation } = b;
 
-      setIpData(newData);
+      setIpData(b);
       setMapLocation(newLocation);
     } catch (error) {
       console.log('Error searching data:', error.message);

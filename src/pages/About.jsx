@@ -1,8 +1,14 @@
+import styled from 'styled-components';
+import AboutInfo from '../components/AboutInfo';
+
+const Section = styled.section`
+  background: linear-gradient(135deg, #283048 0%, #859398 100%);
+`;
 const About = () => {
   return (
-    <section>
-      <h1>About</h1>
-    </section>
+    <Section>
+      <AboutInfo />
+    </Section>
   );
 };
 

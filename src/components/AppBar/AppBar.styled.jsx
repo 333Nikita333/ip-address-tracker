@@ -31,7 +31,7 @@ export const Header = styled.header`
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  background: rgba(62, 32, 180);
+  background: rgba(32, 32, 180, 0.8);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
