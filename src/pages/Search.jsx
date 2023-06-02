@@ -15,7 +15,7 @@ const Background = styled.div`
       rgba(62, 82, 163, 0.4),
       rgba(62, 82, 163, 0.4)
     ),
-    url('/src/assets/pattern-bg-mobile-375x300.png');
+    url('../assets/pattern-bg-mobile-375x300.png');
 
   @media screen and (min-width: 401px) {
     height: 200px;
@@ -25,7 +25,7 @@ const Background = styled.div`
         rgba(62, 82, 163, 0.4),
         rgba(62, 82, 163, 0.4)
       ),
-      url('/src/assets/pattern-bg-desktop-1440x280.png');
+      url('../assets/pattern-bg-desktop-1440x280.png');
   }
 `;
 
