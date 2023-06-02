@@ -3,7 +3,7 @@ import { DataInfo, InfoItem, InfoList } from './DataDisplay.styled';
 const DataDisplay = ({ ipData }) => {
   const {
     ip,
-    location: { country, region, timezone } = {},
+    location: { city, country, region, timezone } = {},
     isp,
   } = ipData || {};
 
@@ -16,7 +16,7 @@ const DataDisplay = ({ ipData }) => {
         <InfoItem>
           <p>Location</p>
           <span>
-            {country}, {region}
+            {country}, {city !== '' ? city : region}
           </span>
         </InfoItem>
         <InfoItem>
