@@ -2,7 +2,7 @@ import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 
 const customMarker = L.icon({
-  iconUrl: '/src/assets/icon-location.svg',
+  iconUrl: '/assets/icon-location.svg',
   iconSize: [46, 56],
 });
 

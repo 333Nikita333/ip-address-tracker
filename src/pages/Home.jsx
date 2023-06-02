@@ -7,7 +7,7 @@ const Section = styled.section`
       rgba(0, 82, 163, 0.3),
       rgba(62, 82, 163, 0.5)
     ),
-    url('../assets/background-image-home-mobile.png');
+    url('/assets/background-image-home-mobile.png');
   background-size: cover;
   background-repeat: no-repeat;
   
@@ -17,7 +17,7 @@ const Section = styled.section`
         rgba(0, 82, 163, 0.3),
         rgba(62, 82, 163, 0.5)
       ),
-      url('../assets/background-image-home-desctop.png');
+      url('/assets/background-image-home-desctop.png');
   }
 `;
 
