@@ -16,6 +16,7 @@ export const Input = styled.input`
   padding: 15px;
   padding-right: 55px;
   width: 100%;
+  margin-bottom: 8px;
 
   border-radius: 15px;
   border: none;
@@ -53,4 +54,9 @@ export const Button = styled.button`
     width: 38px;
     height: 38px;
   }
+`;
+
+export const ErrorMessage = styled.span`
+  font-size: 17px;
+  color: red;
 `;

@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import { toast } from 'react-toastify';
 import { getCurrentUserIP, getDataByIP } from '../services/GeolocationAPI';
 import SearchForm from '../components/SearchForm';
 import DataDisplay from '../components/DataDisplay';
 import MapBox from '../components/MapBox';
+import Loader from '../components/Loader';
+// import a from '../../ip.json';
+// import b from '../../ip2.json';
+
+import styled from 'styled-components';
 
 const Background = styled.div`
   padding: 20px;
@@ -45,10 +50,11 @@ const Title = styled.h1`
 const Search = () => {
   const [ipData, setIpData] = useState(null);
   const [mapLocation, setMapLocation] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       try {
         const currentIP = await getCurrentUserIP();
         const data = await getDataByIP(currentIP);
@@ -58,6 +64,7 @@ const Search = () => {
         setMapLocation(location);
       } catch (error) {
         console.log('Error fetching data:', error.message);
+        toast.error(`Error fetching data: ${error.message}`);
       } finally {
         setIsLoading(false);
       }
@@ -74,8 +81,10 @@ const Search = () => {
 
       setIpData(newData);
       setMapLocation(newLocation);
+      toast.success(`Success. Data about ${ip} found.`);
     } catch (error) {
       console.log('Error searching data:', error.message);
+      toast.error(`Error searching data: ${error.message}`);
     } finally {
       setIsLoading(false);
     }
@@ -86,11 +95,7 @@ const Search = () => {
       <Background>
         <Title>IP Adress Tracker</Title>
         <SearchForm onSearch={handleSearch} />
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          ipData && <DataDisplay ipData={ipData} />
-        )}
+        {isLoading ? <Loader /> : ipData && <DataDisplay ipData={ipData} />}
       </Background>
       {mapLocation && !isLoading && <MapBox location={mapLocation} />}
     </section>

@@ -17,7 +17,7 @@ export const getDataByIP = async ip => {
     return res.data;
   } catch (error) {
     console.log('Error searching by IP:', error.message);
-    throw error;
+    throw new Error(`Error searching by IP: ${error.message}`);
   }
 };
 
@@ -27,7 +27,7 @@ export const getCurrentUserIP = async () => {
     return res.data.ip;
   } catch (error) {
     console.log('Error getting current IP:', error.message);
-    throw error;
+    throw new Error(`Error getting current IP: ${error.message}`);
   }
 };
 
@@ -37,6 +37,6 @@ export const getCountAvailableSearchQueries = async () => {
     return res.data;
   } catch (error) {
     console.log('Error getting count search queries', error.message);
-    throw error;
+    throw new Error(`Error getting count search queries: ${error.message}`);
   }
 };
