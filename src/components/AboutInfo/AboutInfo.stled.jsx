@@ -21,7 +21,7 @@ export const AboutContainer = styled.div`
   color: #fff;
   animation: ${fadeIn} 1s ease-in-out;
   min-height: 100vh;
-  
+
   @media screen and (min-width: 768px) {
     padding: 40px;
   }
@@ -79,4 +79,5 @@ export const StyledButton = styled(Link)`
 
 export const AnimatedButton = styled(StyledButton)`
   animation: ${fadeIn} 1s ease-in-out;
+  margin-bottom: 25px;
 `;

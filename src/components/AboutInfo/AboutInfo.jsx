@@ -1,3 +1,4 @@
+import CardMyLinks from '../CardMyLinks';
 import {
   AboutContainer,
   AboutTitle,
@@ -40,6 +41,7 @@ const AboutInfo = () => {
         </AboutLink>
       </AboutDescription>
       <AnimatedButton to="/search">Get Started</AnimatedButton>
+      <CardMyLinks />
     </AboutContainer>
   );
 };
