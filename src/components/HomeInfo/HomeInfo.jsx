@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react';
-import {
-  HomeContainer,
-  WelcomeMessage,
-  Feature,
-  fadeIn,
-  fadeOut,
-} from './HomeInfo.styled';
+import { HomeContainer, WelcomeMessage, Feature } from './HomeInfo.styled';
+import { fadeInSecondary, fadeOut } from '../../styles/animations.styled';
 
 const phrases = ['Easy to use!', 'Fast and reliable!', 'Powerful features!'];
 
@@ -30,7 +25,11 @@ const HomeInfo = () => {
   return (
     <HomeContainer>
       <WelcomeMessage>Welcome to IP Adress Tracker App!</WelcomeMessage>
-      <Feature animationIn={fadeIn} animationOut={fadeOut} key={currentPhrase}>
+      <Feature
+        animationIn={fadeInSecondary}
+        animationOut={fadeOut}
+        key={currentPhrase}
+      >
         {currentPhrase}
       </Feature>
     </HomeContainer>

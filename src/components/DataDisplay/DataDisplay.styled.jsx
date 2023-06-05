@@ -9,7 +9,7 @@ export const DataInfo = styled.div`
   max-width: 375px;
 
   border-radius: 15px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.primary};
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -38,8 +38,9 @@ export const InfoItem = styled.li`
     border-left: 1px solid #969696;
 
     &:first-child {
-      border-left: none;
       padding-left: 0;
+
+      border-left: none;
     }
   }
 
@@ -48,14 +49,14 @@ export const InfoItem = styled.li`
 
     font-size: 10px;
     letter-spacing: 2px;
-    font-weight: 700;
+    font-weight: ${({ theme }) => theme.fontWeights.secondary};
     color: #969696;
     text-transform: uppercase;
   }
 
   & span {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: ${({ theme }) => theme.fontSizes.primary};
+    font-weight: ${({ theme }) => theme.fontWeights.secondary};
     color: #2b2b2b;
   }
 `;

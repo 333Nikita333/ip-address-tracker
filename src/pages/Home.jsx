@@ -10,7 +10,7 @@ const Section = styled.section`
     url('/assets/background-image-home-mobile.png');
   background-size: cover;
   background-repeat: no-repeat;
-  
+
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(
         to right,

@@ -30,13 +30,3 @@ export const getCurrentUserIP = async () => {
     throw new Error(`Error getting current IP: ${error.message}`);
   }
 };
-
-export const getCountAvailableSearchQueries = async () => {
-  try {
-    const res = await axios.get(`/service/account-balance`);
-    return res.data;
-  } catch (error) {
-    console.log('Error getting count search queries', error.message);
-    throw new Error(`Error getting count search queries: ${error.message}`);
-  }
-};

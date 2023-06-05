@@ -32,7 +32,7 @@ const AboutInfo = () => {
         information about any IP address you enter.
       </AboutDescription>
       <AboutDescription>
-        For more information, you can visit our GitHub repository:{' '}
+        For more information, you can visit the GitHub repository:{' '}
         <AboutLink
           href="https://github.com/333Nikita333/ip-address-tracker"
           target="_blank"

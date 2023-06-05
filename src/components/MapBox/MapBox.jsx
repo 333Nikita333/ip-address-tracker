@@ -10,7 +10,7 @@ const MapBox = ({ location }) => {
       key={`${lat}+${lng}`}
       center={[lat, lng]}
       zoom={13}
-      style={{ height: '400px', width: '100%' }}
+      style={{ height: '600px', width: '100%' }}
       zoomControl={false}
     >
       <TileLayer

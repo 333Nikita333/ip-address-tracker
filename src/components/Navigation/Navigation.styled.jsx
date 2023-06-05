@@ -1,16 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
-
-const slideIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+import styled from 'styled-components';
+import { slideIn } from '../../styles/animations.styled';
 
 export const NavList = styled.ul`
   display: flex;
@@ -24,46 +14,50 @@ export const NavList = styled.ul`
   }
 
   @media screen and (max-width: 767px) {
-    align-items: center;
     justify-content: center;
   }
 
   & li {
+    position: relative;
+
     font-size: 20px;
-    font-weight: 500;
-    position: relative;
-    
+    font-weight: ${({ theme }) => theme.fontWeights.secondary};
+
     @media screen and (min-width: 768px) {
-      font-size: 18px;
-      font-weight: 400;
+      font-size: ${({ theme }) => theme.fontSizes.primary};
+      font-weight: ${({ theme }) => theme.fontWeights.primary};
     }
-    
+
     & a {
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.2s ease;
+      position: relative;
 
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #fff;
-      transform: scaleX(0);
-      transition: transform 0.2s ease;
-    }
+      color: ${({ theme }) => theme.colors.primary};
+      text-decoration: none;
 
-    &:hover {
-      color: #f1f1f1;
+      transition: color 0.2s ease;
 
       &:before {
-        transform: scaleX(1);
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+
+        background-color: ${({ theme }) => theme.colors.primary};
+
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+      }
+
+      &:hover {
+        color: #f1f1f1;
+
+        &:before {
+          transform: scaleX(1);
+        }
       }
     }
-  }
   }
 `;
 
@@ -72,12 +66,6 @@ export const Link = styled(NavLink)`
   align-items: center;
   justify-content: center;
   gap: 10px;
-
-  font-weight: 500;
-
-  @media screen and (min-width: 400px) {
-    font-weight: 700;
-  }
 
   &:hover {
     transform: scale(1.1);

@@ -1,50 +1,45 @@
 import { Link } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
-
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+import styled from 'styled-components';
+import { fadeInPrimary } from '../../styles/animations.styled';
 
 export const AboutContainer = styled.div`
-  padding: 20px;
+  padding: ${({ theme }) => theme.paddings.medium};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  animation: ${fadeIn} 1s ease-in-out;
   min-height: 100vh;
 
+  color: ${({ theme }) => theme.colors.primary};
+
+  animation: ${fadeInPrimary} 1s ease-in-out;
+
   @media screen and (min-width: 768px) {
-    padding: 40px;
+    padding: ${({ theme }) => theme.paddings.large};
   }
 `;
 
 export const AboutTitle = styled.h1`
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: ${({ theme }) => theme.margins.medium};
+
+  font-size: ${({ theme }) => theme.fontSizes.secondary};
+  font-weight: ${({ theme }) => theme.fontWeights.secondary};
   color: hsl(0, 0%, 170%);
 
   @media screen and (min-width: 768px) {
+    margin-bottom: ${({ theme }) => theme.margins.large};
+
     font-size: 32px;
-    margin-bottom: 30px;
   }
 `;
 
 export const AboutDescription = styled.p`
-  font-size: 18px;
-  color: hsl(0, 0%, 170%);
-  font-weight: 400;
-  margin-bottom: 30px;
+  margin-bottom: ${({ theme }) => theme.margins.large};
   text-align: center;
+
+  font-size: ${({ theme }) => theme.fontSizes.primary};
+  font-weight: ${({ theme }) => theme.fontWeights.secondary};
+  color: hsl(0, 0%, 170%);
 
   @media screen and (min-width: 768px) {
     font-size: 20px;
@@ -52,8 +47,9 @@ export const AboutDescription = styled.p`
 `;
 
 export const AboutLink = styled.a`
-  color: rgba(62, 32, 180);
+  color: ${({ theme }) => theme.colors.secondary};
   text-decoration: underline;
+
   transition: color 0.3s ease-in-out;
 
   &:hover {
@@ -62,14 +58,17 @@ export const AboutLink = styled.a`
 `;
 
 export const StyledButton = styled(Link)`
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: 600;
-  background-color: rgba(62, 32, 180);
-  color: #fff;
+  padding: ${({ theme }) =>
+    `${theme.paddings.small} ${theme.paddings.medium}`};
+
+  font-size: ${({ theme }) => theme.fontSizes.primary};
+  font-weight: ${({ theme }) => theme.fontWeights.secondary};
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primary};
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
@@ -78,6 +77,7 @@ export const StyledButton = styled(Link)`
 `;
 
 export const AnimatedButton = styled(StyledButton)`
-  animation: ${fadeIn} 1s ease-in-out;
   margin-bottom: 25px;
+
+  animation: ${fadeInPrimary} 1s ease-in-out;
 `;

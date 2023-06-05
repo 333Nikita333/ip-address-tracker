@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import styled from 'styled-components';
 import { getCurrentUserIP, getDataByIP } from '../services/GeolocationAPI';
 import SearchForm from '../components/SearchForm';
 import DataDisplay from '../components/DataDisplay';
 import MapBox from '../components/MapBox';
 import Loader from '../components/Loader';
-// import a from '../../ip.json';
-// import b from '../../ip2.json';
-
-import styled from 'styled-components';
 
 const Background = styled.div`
   padding: 20px;
@@ -21,8 +18,10 @@ const Background = styled.div`
       rgba(62, 82, 163, 0.4)
     ),
     url('/assets/pattern-bg-mobile-375x300.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 
-  @media screen and (min-width: 401px) {
+  @media screen and (min-width: 768px) {
     height: 200px;
 
     background-image: linear-gradient(
@@ -35,15 +34,14 @@ const Background = styled.div`
 `;
 
 const Title = styled.h1`
-  margin-bottom: 30px;
+  margin-bottom: ${({ theme }) => theme.margins.large};
 
-  font-size: 23px;
-  font-weight: 500;
-
+  font-size: ${({ theme }) => theme.fontSizes.secondary};
+  ${({ theme }) => theme.fontWeights.secondary};
   color: #ffffff;
 
   @media screen and (min-width: 768px) {
-    font-size: 20px;
+    ${({ theme }) => theme.fontSizes.primary};
   }
 `;
 
