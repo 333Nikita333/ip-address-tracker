@@ -7,3 +7,7 @@ IP Adress Tracker project is a web application developed using React and Vite to
 ```link
 "git clone https://github.com/your-username/geo-ip-search.git"
 ```
+2. Change to the project directory:
+```terminal
+cd ip-address-tracker
+```
