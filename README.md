@@ -4,4 +4,6 @@ IP Adress Tracker project is a web application developed using React and Vite to
 
 ## Installation and launch
 1. Clone the repository to your local machine:
+2. ```jsx
 "git clone https://github.com/your-username/geo-ip-search.git"
+```
