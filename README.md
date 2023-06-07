@@ -1,4 +1,5 @@
-# IP Adress Tracker App ![Logo](./public/assets/Logo.png)
+# IP Adress Tracker App
+![Logo](./public/assets/Logo.png)
 
 ## Description
 IP Adress Tracker project is a web application developed using [React](https://react.dev/) and [Vite](https://vitejs.dev/) to get location information from an IP address. It allows the user to enter an IP address and get data such as location, time zone, and internet connection provider. In addition, the application also displays a map with a marker indicating the location based on the received data.
