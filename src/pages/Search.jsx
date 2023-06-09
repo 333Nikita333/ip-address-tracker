@@ -61,7 +61,7 @@ const Search = () => {
         setIpData(data);
         setMapLocation(location);
       } catch (error) {
-        console.log('Error fetching data:', error.message);
+        // console.log('Error fetching data:', error.message);
         toast.error(`Error fetching data: ${error.message}`);
       } finally {
         setIsLoading(false);
@@ -81,7 +81,7 @@ const Search = () => {
       setMapLocation(newLocation);
       toast.success(`Success. Data about ${ip} found.`);
     } catch (error) {
-      console.log('Error searching data:', error.message);
+      // console.log('Error searching data:', error.message);
       toast.error(`Error searching data: ${error.message}`);
     } finally {
       setIsLoading(false);
